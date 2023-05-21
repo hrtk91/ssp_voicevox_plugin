@@ -1,0 +1,19 @@
+[package]
+name = "ssp_voicevox_plugin"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+libc = "0.2.144"
+once_cell = "1.17.1"
+regex = "1.8.1"
+rodio = "0.17.1"
+rvvc = { path = "../rvvc" }
+
+[lib]
+crate-type = ["cdylib"]
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3.9", features = ["winuser", "winbase"] }
